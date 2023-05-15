@@ -19,6 +19,6 @@ const drawBoard = (dim) => {
 newBoard.addEventListener("submit", event => {
     event.preventDefault();
     drawBoard(document.querySelector("input[type=number]").value);
-})
+});
 
 window.addEventListener("load", drawBoard(rows));
