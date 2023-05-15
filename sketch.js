@@ -14,12 +14,15 @@ const drawBoard = (dim) => {
         etch.appendChild(newRow.cloneNode(true)); 
     for (let i = 0; i < dim; i++)
         document.querySelectorAll(".etch-row").forEach(element => element.appendChild(newCell.cloneNode(true)));
-    document.querySelectorAll(".etch-cell").forEach(element => element.setAttribute("style", `width: ${cellDim}px; height: ${cellDim}px`));
+    const etchCell = document.querySelectorAll(".etch-cell");
+    etchCell.forEach(element => element.setAttribute("style", `width: ${cellDim}px; height: ${cellDim}px`));
+    etchCell.forEach(element => element.addEventListener("mouseenter", element => element.target.style.backgroundColor = "black"));
 }
 
 newBoard.addEventListener("submit", event => {
     event.preventDefault();
     drawBoard(numInput.value);
 });
+
 
 window.addEventListener("load", drawBoard(rows));
