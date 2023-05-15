@@ -1,5 +1,6 @@
 const etch = document.querySelector(".etch-container");
 const newBoard = document.querySelector("form");
+const numInput = document.querySelector("input[type=number]");
 let rows = 16;
 
 const drawBoard = (dim) => {
@@ -18,7 +19,7 @@ const drawBoard = (dim) => {
 
 newBoard.addEventListener("submit", event => {
     event.preventDefault();
-    drawBoard(document.querySelector("input[type=number]").value);
+    drawBoard(numInput.value);
 });
 
 window.addEventListener("load", drawBoard(rows));
