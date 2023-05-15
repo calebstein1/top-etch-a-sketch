@@ -15,8 +15,8 @@ const drawBoard = (dim) => {
     for (let i = 0; i < dim; i++)
         document.querySelectorAll(".etch-row").forEach(element => element.appendChild(newCell.cloneNode(true)));
     const etchCell = document.querySelectorAll(".etch-cell");
-    etchCell.forEach(element => element.setAttribute("style", `width: ${cellDim}px; height: ${cellDim}px`));
-    etchCell.forEach(element => element.addEventListener("mouseenter", element => element.target.style.backgroundColor = "black"));
+    etchCell.forEach(element => element.setAttribute("style", `width: ${cellDim}px; height: ${cellDim}px; background-color: black; opacity: 0;`));
+    etchCell.forEach(element => element.addEventListener("mouseenter", element => element.target.style.opacity = +element.target.style.opacity + 0.1));
 }
 
 newBoard.addEventListener("submit", event => {
