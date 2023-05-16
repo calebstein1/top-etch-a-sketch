@@ -4,7 +4,7 @@ const numInput = document.querySelector("input[type=number]");
 let rows = 16;
 
 const drawBoard = (dim) => {
-    etch.innerHTML = "";
+    etch.clearChildren();
     const cellDim = 960 / dim;
     const newRow = document.createElement("div");
     const newCell = document.createElement("div");
